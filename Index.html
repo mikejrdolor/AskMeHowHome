@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Trusted Sales Agent | Townhouses & Condominiums</title>
+  <meta name="description" content="Find your dream townhouse or condominium with a trusted real estate sales agent. Flexible financing, curated listings, and expert guidance from inquiry to move-in." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Index.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏡</text></svg>">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a class="brand" href="#home" aria-label="Home">
+        <span class="brand-mark">🏡</span>
+        <span class="brand-text">AskMeHowHomes</span>
+      </a>
+      <nav class="nav">
+        <a href="#listings">Listings</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact" class="btn btn-small">Inquire</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Find Your Perfect <span class="accent">Townhouse</span> or <span class="accent">Condo</span></h1>
+        <p>Expert guidance, curated properties, and flexible financing. Whether you’re buying a forever home or investing for passive income, I’ll get you there—stress-free.</p>
+        <div class="hero-actions">
+          <a href="#listings" class="btn">Browse Listings</a>
+          <a href="#contact" class="btn btn-outline">Get Pre-Qualified</a>
+        </div>
+        <ul class="hero-badges">
+          <li>✔️ Bank-assisted financing</li>
+          <li>✔️ Pag Ibig</li>
+          <li>✔️ In - House Financing</li>
+          <li>✔️ Airbnb-friendly options</li>
+          <li>✔️ Near CBDs & School hubs</li>
+          <li>✔️ Near At Malls</li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <img src="PX/P01.jpg" alt="Modern residential community with townhouses and condos" loading="eager">
+        <div class="hero-card">
+          <strong>TCP ₱3,396,190.87  </strong>
+          <strong>From ₱17,529.05 /month</strong>
+          <span>10% DP options on select units</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Filters -->
+  <section class="filters">
+    <div class="container filter-row">
+      <form class="filter-form" action="#listings" method="get">
+        <label>
+          Property Type
+          <select name="type">
+            <option value="">Any</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="condo">Condominium</option>
+          </select>
+        </label>
+        <label>
+          Budget (Monthly)
+          <select name="budget">
+            <option value="">Any</option>
+            <option value="<=18000">≤ ₱18K</option>
+            <option value="18001-30000">₱18K–30K</option>
+            <option value=">30000">> ₱30K</option>
+          </select>
+        </label>
+        <label>
+          City / Area
+          <input type="text" name="area" placeholder="e.g., Las Piñas, Makati, BGC, Cavite, Caloocan" />
+        </label>
+        <button class="btn" type="submit">Apply Filters</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Featured Listings -->
+  <section id="listings" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Listings</h2>
+        <p>Handpicked homes with strong value, rental potential, and great locations.</p>
+      </div>
+
+      <div class="cards">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="PX/K01.png" alt="2-storey modern townhouse exterior" loading="lazy">
+            <span class="badge">Townhouse</span>
+          </div>
+          <div class="card-body">
+            <h3>2-BR Modern Townhouse • Cavite</h3>
+            <ul class="specs">
+              <li>• 2 Beds</li>
+              <li>• 2 Baths</li>
+              <li>• 1 Carport</li>
+              <li>• 106 sqm FA</li>
+            </ul>
+            <p class="price">From ₱39,511/mo</p>
+            <p class="note">#Along KagawaranAve., Brgy Molino &, Bacoor, Cavite Via Marcos Alvarez, Las Pinzas • Ready for Occupancy</p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-small">Check Availability</a>
+              <button class="btn btn-ghost btn-small" data-unit="Townhouse LP 3BR">Save</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="PX/Pseo01.png" alt="Resort-style condominium amenities" loading="lazy">
+            <span class="badge badge-alt">Condo</span>
+          </div>
+          <div class="card-body">
+            <h3>Studio Condo 24.30sq • 1 Bedroom 36.45sq • 2 Bedroom 49.33sq • 3 Bedroom 63.55sq</h3>
+            <ul class="specs">
+              <li>• Flood Free</li>
+              <li>• High ROI</li>
+              <li>• Pool & Gym</li>
+              <li>• 24/7 Security</li>
+            </ul>
+            <p class="price">From ₱18,000/mo</p>
+            <p class="note">Near to Universities and Malls • Ideal for Students, Family and Business • # Las Pinas </p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-small">Check Availability</a>
+              <button class="btn btn-ghost btn-small" data-unit="Condo Makati Studio">Save</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="PX/Tor01.png" alt="Spacious 2-bedroom condo interior" loading="lazy">
+            <span class="badge badge-alt">Condo</span>
+          </div>
+          <div class="card-body">
+            <h3>• 1-BR Condo 25.82sq • 1-BR Condo 35.28sq</h3>
+            <ul class="specs">
+              <li>• Near at Malls</li>
+              <li>• 24/7 Securities</li>
+              <li>• RIFD </li>
+              <li>• Pet-Friendly</li>
+              <li>• Good For Students</li>
+            </ul>
+            <p class="price">From ₱39,900/mo</p>
+            <p class="note">Walk to offices, parks, malls, Near to Universities and Malls • Ideal for Students, Family and Business • Along Las Pinas, Alabang - Zapote Rd.</p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-small">Check Availability</a>
+              <button class="btn btn-ghost btn-small" data-unit="Condo BGC 2BR">Save</button>
+            </div>
+          </div>
+        </article>
+
+  <!-- Card 4 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="PX/A01.png" alt="2-storey modern townhouse exterior" loading="lazy">
+            <span class="badge">Townhouse</span>
+          </div>
+          <div class="card-body">
+            <h3>3-BR Modern Townhouse • Las Piñas</h3>
+            <ul class="specs">
+              <li>4 Beds</li>
+              <li>5 Baths</li>
+              <li>4 Carport</li>
+              <li>184 sqm FA</li>
+              <li>2 Balconies</li>
+              <li>3 Storey House</li>
+              <li>Living Room</li>
+              <li>Service Area</li>
+              <li>Dining Area</li>
+            </ul>
+            <p class="price">TCP ₱13,000,000</p>
+            <p class="note">#Inland Homes, Merville, Paranaque • Ready for Occupancy</p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-small">Check Availability</a>
+              <button class="btn btn-ghost btn-small" data-unit="Townhouse LP 3BR">Save</button>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+
+      <div class="cta-inline">
+        <p>Want a custom shortlist that fits your lifestyle and budget?</p>
+        <a href="#contact" class="btn">Build My Shortlist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Work With Me -->
+  <section id="why" class="section bg-soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why Buyers & Investors Choose Me</h2>
+        <p>Transparent advice, strong developer network, and end-to-end service.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="icon">🧭</div>
+          <h3>Advisor, not a pusher</h3>
+          <p>I’ll help you compare real numbers (costs, ROI, rental comps) so you decide with confidence.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <h3>Developer access</h3>
+          <p>Priority to new launches, exclusive promos, and units not listed publicly.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🏦</div>
+          <h3>Financing support</h3>
+          <p>Bank pre-approval guidance and payment options that fit your cash flow.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🛠️</div>
+          <h3>After-sales care</h3>
+          <p>Turnover punch-list, leasing setup, and property management referrals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Simple 4-Step Process</h2>
+      </div>
+      <ol class="steps">
+        <li><span>1</span> Discovery Call & Budget Fit</li>
+        <li><span>2</span> Curated Shortlist & Site Tours</li>
+        <li><span>3</span> Reservation & Bank Pre-Approval</li>
+        <li><span>4</span> Turnover, Leasing, & Move-in</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section bg-soft">
+    <div class="container">
+      <div class="section-head">
+        <h2>Happy Clients</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>“We locked a unit within our budget and had tenants in 3 weeks. Smooth from day one.”</blockquote>
+          <figcaption>— Arni & Paul, first-time investors</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“Clear, honest, and always responsive. The spreadsheet breakdowns helped us decide fast.”</blockquote>
+          <figcaption>— Mia D., OFW buyer</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“From viewing to bank approval, everything was handled. Highly recommended.”</blockquote>
+          <figcaption>— James R., end-user</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Lead Form -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <h2>Let’s find your perfect home or investment</h2>
+        <p>Tell me what you’re looking for and I’ll send a tailored shortlist within 24 hours.</p>
+        <ul class="contact-bullets">
+          <li>✔️ Detailed payment terms</li>
+          <li>✔️ Sample computations</li>
+          <li>✔️ Nearby rent comps</li>
+        </ul>
+        <div class="contact-badge">
+          <span>PRC & DHSUD Licensed</span>
+        </div>
+      </div>
+
+      <form class="lead-form" action="https://formspree.io/f/mvgqlywq" method="POST">
+        <label>
+          Full Name
+          <input required type="text" name="name" placeholder="Juan Dela Cruz" />
+        </label>
+        <label>
+          Email
+          <input required type="email" name="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Phone / Viber / WhatsApp
+          <input required type="tel" name="phone" placeholder="+63 9XX XXX XXXX" />
+        </label>
+        <label>
+          Looking For
+          <select name="propertyType" required>
+            <option value="">Select one</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Condominium">Condominium</option>
+            <option value="Either">Either</option>
+          </select>
+        </label>
+        <label>
+          Preferred Area
+          <input type="text" name="area" placeholder="e.g., Las Piñas, Makati, BGC" />
+        </label>
+        <label>
+          Monthly Budget
+          <input type="text" name="budget" placeholder="e.g., ₱18,000–30,000" />
+        </label>
+        <label>
+          Notes
+          <textarea name="notes" rows="4" placeholder="Move-in timeline, investment goals, must-haves…"></textarea>
+        </label>
+        <button class="btn" type="submit">Get My Shortlist</button>
+        <p class="form-footnote">By submitting, you agree to be contacted about real estate offers. You can opt out anytime.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-footer">
+          <span class="brand-mark">🏡</span>
+          <span class="brand-text">AskMeHowHomes</span>
+        </div>
+        <p class="muted">Helping buyers and investors make confident moves in townhouses and condominiums.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-list">
+          <li>📞 <a href="tel:+639618439871">+63 961 843 9871</a></li>
+          <li>✉️ <a href="mailto:mikejrdolor#gmail.com">mikejrdolor#gmail.com</a></li>
+          <li>📍 Las Pinas </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-list">
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Inquire</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">© <span id="year"></span> AskMeHowHomes • All rights reserved.</div>
+  </footer>
+
+  <!-- Minimal JS: mobile menu + year -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
