@@ -257,3 +257,21 @@ body {
 .footer-list a:hover{ color:#fff; }
 .muted{ color:var(--muted); }
 .legal{ text-align:center; color:#7f8fb0; font-size:.9rem; padding:14px 0 24px; border-top:1px solid var(--stroke); }
+
+
+/* Image side by side seminar and activities */
+
+.image-row {
+  display: flex;              /* Place images in a row */
+  gap: 10px;                  /* Space between images */
+  justify-content: center;    /* Center horizontally */
+}
+
+.image-row img {
+  width: 200px;               /* Set size */
+  height: auto;               /* Keep proportions */
+  border-radius: 8px;         /* Rounded corners */
+}
+
+
+
