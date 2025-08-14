@@ -51,14 +51,63 @@
       </div>
       <div class="hero-media">
         <img src="PX/P01.jpg" alt="Modern residential community with townhouses and condos" loading="eager">
-        <div class="hero-card">
+          <div class="hero-card">
           <strong>TCP ₱3,396,190.87  </strong>
           <strong>From ₱17,529.05 /month</strong>
           <span>10% DP options on select units</span>
         </div>
-      </div>
+     </div>
     </div>
   </section>
+
+
+
+
+<!-- Sliding box -->
+
+<div class="slider">
+  <div class="slides">
+    <img src="PX/NewOne.jpg" style=" width:800px; height:400px;" alt="Slide 1">
+    <img src="PX/Gelma.jpg" style=" width:800px; height:400px;" alt="Slide 2">
+    <img src="PX/Gelma1.jpg" style=" width:800px; height:400px;" alt="Slide 3">
+    <img src="PX/CTower.jpg" style=" width:800px; height:400px;" alt="Slide 4">
+    <img src="PX/CTower1.jpg" style=" width:800px; height:400px;" alt="Slide 5">
+
+
+  </div>
+
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
+
+<script>
+  const slides = document.querySelector('.slides');
+  const images = document.querySelectorAll('.slides img');
+  const totalSlides = images.length;
+  let index = 0;
+
+  document.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  // Auto slide every 6 seconds
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }, 4000);
+</script>
+
+
+
+
+
+
 
   <!-- Quick Filters -->
   <section class="filters">
@@ -178,15 +227,15 @@
           <div class="card-body">
             <h3>3-BR Modern Townhouse • Las Piñas</h3>
             <ul class="specs">
-              <li>4 Beds</li>
-              <li>5 Baths</li>
-              <li>4 Carport</li>
-              <li>184 sqm FA</li>
-              <li>2 Balconies</li>
-              <li>3 Storey House</li>
-              <li>Living Room</li>
-              <li>Service Area</li>
-              <li>Dining Area</li>
+              <li>• 4 Beds</li>
+              <li>• 5 Baths</li>
+              <li>• 4 Carport</li>
+              <li>• 184 sqm FA</li>
+              <li>• 2 Balconies</li>
+              <li>• 3 Storey House</li>
+              <li>• Living Room</li>
+              <li>• Service Area</li>
+              <li>• Dining Area</li>
             </ul>
             <p class="price">TCP ₱13,000,000</p>
             <p class="note">#Inland Homes, Merville, Paranaque • Ready for Occupancy</p>
@@ -196,6 +245,60 @@
             </div>
           </div>
         </article>
+
+
+ <!-- Card 5 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="PX/Gelma01.jpg" alt="2-storey modern townhouse exterior" loading="lazy">
+            <span class="badge">Townhouse</span>
+          </div>
+          <div class="card-body">
+            <h3>2-BR Modern Townhouse • Dasmarinas Cavite</h3>
+            <ul class="specs">
+              <li>• 2 Beds</li>
+              <li>• 2 Toilets & Baths</li>
+              <li>1 C• arport</li>
+              <li>• 84 sqm FA</li>
+              <li>• 2 Storey House</li>
+              <li>• Living Room</li>
+              <li>• Service Area</li>
+              <li>• Dining Area</li>
+            </ul>
+            <p class="price">TCP ₱4,495,000</p>
+            <p class="note">#Mangoville, Brgy. Salitran, Dasmarinas, Cavite • Ready for Occupancy</p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-small">Check Availability</a>
+              <button class="btn btn-ghost btn-small" data-unit="Townhouse LP 3BR">Available</button>
+            </div>
+          </div>
+        </article>
+
+
+
+<!-- Card 6 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="PX/Newtown01.jpg" alt="Spacious 2-bedroom condo interior" loading="lazy">
+            <span class="badge badge-alt">Condo</span>
+          </div>
+          <div class="card-body">
+            <h3>• PRE-SELLING Studio Condo 22sq • 1-BR Condo 36.24sq</h3>
+            <ul class="specs">
+              <li>• Near at Malls</li>
+              <li>• 24/7 Securities</li>
+              <li>• Good for Offices & Investment </li>
+              <li>• Good For Families & Students</li>
+            </ul>
+            <p class="price">From ₱22,818.45/mo</p>
+            <p class="note">Walk to offices, parks, malls, Near to Universities and Malls • Ideal for Students, Family and Business • NewTown, Dasmarinas Cavite</p>
+            <div class="card-actions">
+              <a href="#contact" class="btn btn-small">Check Availability</a>
+              <button class="btn btn-ghost btn-small" data-unit="Condo BGC 2BR">Available</button>
+            </div>
+          </div>
+        </article>
+
 
 
       </div>
@@ -296,17 +399,17 @@
       <form class="lead-form" action="https://formspree.io/f/mvgqlywq" method="POST">
         <label>
           Full Name
-          <input required type="text" name="name" placeholder="Juan Dela Cruz" />
+          <input required type="text" name="name" placeholder="name here" />
         </label>
         <label>
           Email
-          <input required type="email" name="email" placeholder="you@example.com" />
+          <input required type="email" name="email" placeholder="email here@gmail.com" />
         </label>
         <label>
           Phone / Viber / WhatsApp
-          <input required type="tel" name="phone" placeholder="+63 9XX XXX XXXX" />
+          <input required type="tel" name="phone" placeholder="+63 000 000 9871" /> 
         </label>
-        <label>
+        <label> 
           Looking For
           <select name="propertyType" required>
             <option value="">Select one</option>
