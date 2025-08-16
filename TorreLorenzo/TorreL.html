@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torre Lorenzo</title>
+    <link rel="stylesheet" href="TorreL.css">
+</head>
+<body>
+<p style="font-size:60px;text-align:center;">Actual Picture of Torre Lorenzo Sur </p>
+<h1 class="title"> Along Alabang Zapote Rd. Near University Belt</h1>
+<h1 class="title"> Malate Metro Manila Near University Belt</h1>
+
+<div class="gallery">
+    <img src="TorrSurPX/1.PNG" alt="Torre Sur Las Pinas" onclick="openLightbox(this)">
+    <img src="TorrSurPX/2.PNG" alt="Location" onclick="openLightbox(this)">
+    <img src="TorrSurPX/3.jpg" alt="Balcony" onclick="openLightbox(this)">
+    <img src="TorrSurPX/4.jpg" alt="Balcony" onclick="openLightbox(this)">
+    <!-- <img src="TorrSurPX/5.jpg" alt="Kitchen" onclick="openLightbox(this)"> -->
+    <img src="TorrSurPX/6.jpg" alt="Kitchen" onclick="openLightbox(this)"> 
+    <img src="TorrSurPX/7.jpg" alt="Path Way " onclick="openLightbox(this)">
+    <img src="TorrSurPX/8.jpg" alt="Bedroom" onclick="openLightbox(this)">
+    <img src="TorrSurPX/9.jpg" alt="Kitchen" onclick="openLightbox(this)">
+    <img src="TorrSurPX/10.jpg" alt="Balconyr" onclick="openLightbox(this)">
+    <img src="TorrSurPX/11.jpg" alt="Kitchen" onclick="openLightbox(this)">
+    <img src="TorrSurPX/12.jpg" alt="Living Room" onclick="openLightbox(this)">
+    <img src="TorrSurPX/13.jpg" alt="Bedroom" onclick="openLightbox(this)">
+    <img src="TorrSurPX/14.jpg" alt="Toilet and Bath" onclick="openLightbox(this)">
+    <img src="TorrSurPX/15.jpg" alt="Living Room" onclick="openLightbox(this)">
+    <img src="TorrSurPX/16.jpg" alt="Living Room" onclick="openLightbox(this)">
+    <img src="TorrSurPX/17.jpg" alt="Living Room" onclick="openLightbox(this)">
+    <img src="TorrSurPX/18.PNG" alt="Facilities" onclick="openLightbox(this)">
+
+<video width="500" height="300" controls>
+  <source src="TorrSurPX/5.mp4" type="video/mp4">
+  <source src="" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+  
+</div>
+
+
+
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="modal" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="lightboxImg">
+    <div id="caption"></div>
+</div>
+
+<script>
+function openLightbox(img) {
+    document.getElementById("lightboxModal").style.display = "block";
+    document.getElementById("lightboxImg").src = img.src;
+    document.getElementById("caption").innerHTML = img.alt;
+}
+
+function closeLightbox() {
+    document.getElementById("lightboxModal").style.display = "none";
+}
+</script>
+
+
+
+<!-- Contact / Lead Form -->
+  <section id="contact" class="section contact">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <p style="font-size:60px;text-align:center;">For Inquiry Please Fill Up the Form</p>
+        <p></p>
+                <div class="contact-badge">
+          <span></span>
+                                                                 
+        </div>
+      </div>
+
+      <form class="lead-form" action="https://formspree.io/f/mvgqlywq" method="POST">
+        <label>
+          Full Name
+          <input required type="text" name="name" placeholder="name here" />
+        </label>
+        <label>
+          Email
+          <input required type="email" name="email" placeholder="email here@gmail.com" />
+        </label>
+        <label>
+          Phone / Viber / WhatsApp
+          <input required type="tel" name="phone" placeholder="+63 000 000 9871" /> 
+        </label>
+        <label> 
+          Looking For
+          <select name="propertyType" required>
+            <option value="">Select one</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Condominium">Condominium</option>
+            <option value="Either">Either</option>
+          </select>
+        </label>
+        <label>
+          Preferred Area
+          <input type="text" name="area" placeholder="e.g., Las Piñas, Makati, BGC" />
+        </label>
+        <label>
+          Monthly Budget
+          <input type="text" name="budget" placeholder="e.g., ₱18,000–30,000" />
+        </label>
+        <label>
+          Notes
+          <textarea name="notes" rows="4" placeholder="Move-in timeline, investment goals, must-haves…"></textarea>
+        </label>
+        <button class="btn" type="submit">Send Inquiry</button>
+        <p class="form-footnote">By submitting, you agree to be contacted about real estate offers. You can opt out anytime.</p>
+      </form>
+    </div>
+  </section>
+
+
+<!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-footer">
+          <span class="brand-mark">🏡</span>
+          <span class="brand-text">AskMeHowHomes</span>
+        </div>
+        <p class="muted">Helping buyers and investors make confident moves in townhouses and condominiums.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-list">
+          <li>📞 <a href="tel:+639618439871">+63 961 843 9871</a></li>
+          <li>✉️ <a href="mailto:mikejrdolor@gmail.com">mikejrdolor@gmail.com</a></li>
+          <li>✉️ <a href="https://www.facebook.com/profile.php?id=61551203853576">FaceBook</a></li>
+          <li>📍 Las Pinas </li>
+        </ul>
+      </div>
+      <div>
+       </div>
+    </div>
+    <div class="legal">© <span id="year"></span> AskMeHowHomes • All rights reserved. Created By: Michael Dolor</div>
+  </footer>
+
+
+
+
+ <!-- Minimal JS: mobile menu + year -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+
+</body>
+</html>
