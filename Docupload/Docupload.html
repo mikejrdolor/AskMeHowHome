@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents</title>
+    <link rel="stylesheet" href="Docupload.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>📤 Upload Your Documents</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="fileInput" class="file-label">Choose Document</label>
+            <input type="file" id="fileInput" name="document" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png" required>
+
+            <button type="submit">Upload</button>
+        </form>
+
+        <div id="fileList"></div>
+    </div>
+
+    <script src="Docupload.js"></script>
+</body>
+</html>
