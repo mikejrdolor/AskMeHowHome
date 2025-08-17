@@ -1,15 +1,13 @@
-﻿document.getElementById("uploadForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  let fileInput = document.getElementById("fileInput");
+﻿document.getElementById("fileInput").addEventListener("change", function() {
   let fileList = document.getElementById("fileList");
+  fileList.innerHTML = "";
 
-  if (fileInput.files.length > 0) {
-    let file = fileInput.files[0];
-
-    // Display file name
-    fileList.innerHTML = `<p>✅ Uploaded: <strong>${file.name}</strong></p>`;
-  } else {
-    fileList.innerHTML = "<p style='color:red;'>⚠ Please select a file.</p>";
+  if (this.files.length > 0) {
+    for (let i = 0; i < this.files.length; i++) {
+      let file = this.files[i];
+      let li = document.createElement("p");
+      li.textContent = `📄 ${file.name}`;
+      fileList.appendChild(li);
+    }
   }
 });
