@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Multiple Documents</title>
+    <link rel="stylesheet" href="Docupload.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>📂 Upload Your Documents (Max 10+)</h2>
+
+        <form id="uploadForm" action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="fileInput" class="file-label">Choose Documents</label>
+            <input type="file" id="fileInput" name="documents[]" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png" required>
+
+            <button type="submit">Upload Files</button>
+        </form>
+
+        <div id="fileList"></div>
+    </div>
+
+    <script src="Docupload.js"></script>
+</body>
+</html>
