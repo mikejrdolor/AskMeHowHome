@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Loan Requirements Checklist</title>
+  <link rel="stylesheet" href="Listchk.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🏦 Bank Loan Requirements Checklist</h1>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs">
+      <button data-tab="local">Locally Employed / Working Abroad</button>
+      <button data-tab="self">Self-Employed / Business Income</button>
+      <button data-tab="reservation">Upon Reservation</button>
+      <button data-tab="movein">Before Move-In</button>
+      <button data-tab="banks">Listed Bank % per Loan</button>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Checklist Sections -->
+    <section id="local" class="tab-content">
+      <h2>Locally Employed / Working Abroad</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Properly accomplished bank application form</li>
+        <li><input type="checkbox"> Certificate of employment with compensation / POEA contract</li>
+        <li><input type="checkbox"> Photocopy of marriage contract (if applicable)</li>
+        <li><input type="checkbox"> COE or latest payslip</li>
+        <li><input type="checkbox"> Updated photocopy of 2 valid government IDs</li>
+        <li><input type="checkbox"> Special Power of Attorney (consularized if abroad)</li>
+        <li><input type="checkbox"> SPA + passport/seaman book/ticket (for sea-based buyers)</li>
+      </ul>
+    </section>
+
+    <section id="self" class="tab-content hidden">
+      <h2>Self-Employed / Business Income</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Properly accomplished bank application form</li>
+        <li><input type="checkbox"> Business permit (DTI/SEC + Articles of Incorporation)</li>
+        <li><input type="checkbox"> Latest 6 months bank statement</li>
+        <li><input type="checkbox"> Photocopy of IDs of signatories + Secretary Certificate</li>
+        <li><input type="checkbox"> Income Tax Return & FS with BIR stamp (last 3 yrs)</li>
+      </ul>
+    </section>
+
+    <section id="reservation" class="tab-content hidden">
+      <h2>Requirement Upon Reservation</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Buyer’s Information Sheet</li>
+        <li><input type="checkbox"> Valid IDs (3 signatures)</li>
+        <li><input type="checkbox"> COE and Payslip</li>
+        <li><input type="checkbox"> Attorney-in-fact ID + specimen signature</li>
+        <li><input type="checkbox"> Special Power of Attorney (if applicable)</li>
+        <li><input type="checkbox"> Valid TIN ID (updated if married)</li>
+      </ul>
+    </section>
+
+    <section id="movein" class="tab-content hidden">
+      <h2>Requirement Before Move-In</h2>
+      <ul class="checklist">
+        <li><input type="checkbox"> Upon Loan Release / Take Out</li>
+        <li><input type="checkbox"> Signed House Turnover Contract</li>
+      </ul>
+    </section>
+
+    <!-- <section id="banks" class="tab-content hidden">
+      <h2>Listed Bank Percentage Per Loan</h2>
+      <table>
+        <tr><th>Bank</th><th>Rate</th></tr>
+        <tr><td>PNB</td><td>6.70%</td></tr>
+        <tr><td>CBS</td><td>6.70%</td></tr>
+        <tr><td>Land Bank</td><td>6.88%</td></tr>
+        <tr><td>BPI</td><td>6.75%</td></tr>
+        <tr><td>Sterling</td><td>9.50%</td></tr>
+        <tr><td>Metrobank</td><td>6.88%</td></tr>
+        <tr><td>RCBC</td><td>7.75%</td></tr>
+      </table>
+    </section> -->
+
+<section id="banks" class="tab-content hidden">
+  <h2>Listed Bank Percentage Per Loan</h2>
+  <table class="bank-table">
+    <tr><th>Bank</th><th>Rate</th></tr>
+    <tr>
+      <td><img src="Logo/Pnb.png" alt="PNB Logo" class="bank-logo"> PNB</td>
+      <td>6.70%</td>
+    </tr>
+    <tr>
+      <td><img src="Logo/cbs.png" alt="CBS Logo" class="bank-logo"> CBS</td>
+      <td>6.70%</td>
+    </tr>
+    <tr>
+      <td><img src="Logo/Lbank.jpg" alt="Landbank Logo" class="bank-logo"> Land Bank</td>
+      <td>6.88%</td>
+    </tr>
+    <tr>
+      <td><img src="Logo/bpi.jpg" alt="BPI Logo" class="bank-logo"> BPI</td>
+      <td>6.75%</td>
+    </tr>
+    <tr>
+      <td><img src="Logo/sterling.png" alt="Sterling Logo" class="bank-logo"> Sterling</td>
+      <td>9.50%</td>
+    </tr>
+    <tr>
+      <td><img src="Logo/metrobank.jpg" alt="Metrobank Logo" class="bank-logo"> Metrobank</td>
+      <td>6.88%</td>
+    </tr>
+    <tr>
+      <td><img src="Logo/rcbc.png" alt="RCBC Logo" class="bank-logo"> RCBC</td>
+      <td>7.75%</td>
+    </tr>
+  </table>
+</section>
+
+
+
+
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button id="show-pending">Show Pending Only</button>
+      <button id="summary">Show Summary</button>
+      <button id="print">Print</button>
+      <button id="download">Download as PDF</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <!-- Notes -->
+    <textarea id="notes" placeholder="Add notes here..."></textarea>
+  </div>
+
+<!-- Footer -->
+  <footer>
+    AskMeHowHome 2025-2026 © Michael Dolor ©Email: mikejrdolor@gmail.com
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="Listchk.js"></script>
+</body>
+</html>

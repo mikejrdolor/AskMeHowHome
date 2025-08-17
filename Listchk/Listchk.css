@@ -1,0 +1,147 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  background: #0056b3;
+}
+
+.tab-content {
+  display: block;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+
+.checklist li {
+  margin: 10px 0;
+}
+
+.progress-container {
+  background: #e9ecef;
+  border-radius: 10px;
+  margin: 10px 0;
+  height: 20px;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #28a745;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+
+
+
+
+.bank-logo {
+  width: 40px;
+  height: auto;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+
+
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  padding: 10px 15px;
+  border: none;
+  background: #6c757d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background: #495057;
+}
+
+#notes {
+  width: 100%;
+  margin-top: 15px;
+  height: 80px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+
+
+/* Existing styles stay the same above */
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px;
+  background: #f1f1f1;
+  color: #555;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+
+
