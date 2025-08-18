@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unit Sample Computation</title>
+  <link rel="stylesheet" href="price.css">
+</head>
+<body>
+  <header>
+    <h1>Unit Sample Computation</h1>
+    <label for="unitSelect">Select Unit Type:</label>
+    <select id="unitSelect">
+      <option value="">-- Choose Unit --</option>
+      <option value="inner">Inner Unit</option>
+      <option value="end">End Unit</option>
+      <option value="corner">Corner Unit</option>
+    </select>
+  </header>
+
+  <!-- Tables -->
+  <section id="tables">
+
+    <!-- Inner Unit -->
+    <div class="unit-table" id="inner">
+      <h2>Inner Unit Sample Computation</h2>
+      <p>Effective August 01, 2025</p>
+      <table>
+        <tr><td>Lot (sq.m)</td><td>60</td></tr>
+        <tr><td>Usable (sq.m)</td><td>106</td></tr>
+        <tr><td>Total Contract Price (TCP)</td><td>P 5,995,554.14</td></tr>
+        <tr><td>Down Payment (10%)</td><td>P 599,555.41</td></tr>
+        <tr><td>Less Reservation</td><td>P 50,000</td></tr>
+        <tr><td>DP Balance</td><td>P 549,555.41</td></tr>
+      </table>
+
+      <h3>DP Terms</h3>
+      <table>
+        <tr><th>Block</th><th>Months to Pay</th><th>Monthly Amortization</th></tr>
+        <tr><td>Block 2</td><td>18</td><td>30,530.86</td></tr>
+        <tr><td>Block 4</td><td>12</td><td>45,796.28</td></tr>
+        <tr><td>Block 3</td><td>6</td><td>91,592.57</td></tr>
+      </table>
+
+      <p><strong>Balance (90%) for Bank Loan:</strong> P 5,395,998.73</p>
+
+      <h3>Bank Loan Terms</h3>
+      <table>
+        <tr><th>Years</th><th>Monthly Amortization</th><th>Required Combined Income</th></tr>
+        <tr><td>25</td><td>37,725.72</td><td>95,000.00</td></tr>
+        <tr><td>20</td><td>41,447.33</td><td>105,000.00</td></tr>
+        <tr><td>15</td><td>48,139.47</td><td>122,000.00</td></tr>
+        <tr><td>10</td><td>62,318.91</td><td>160,000.00</td></tr>
+        <tr><td>5</td><td>106,542.01</td><td>270,000.00</td></tr>
+      </table>
+
+      <h3>In House 20% Downpayment</h3>
+      <table>
+        <tr><th>Years</th><th>Amount</th><th>Percentage</th></tr>
+        <tr><td>5</td><td>117,087.28</td><td>14%</td></tr>
+        <tr><td>10</td><td>85,829.15</td><td>16%</td></tr>
+      </table>
+
+      <button onclick="printTable('inner')">Print</button>
+      <button onclick="downloadCSV('inner')">Download CSV</button>
+    </div>
+
+    <!-- End Unit -->
+    <div class="unit-table" id="end">
+      <h2>End Unit Sample Computation</h2>
+      <p>Effective August 01, 2025</p>
+      <table>
+        <tr><td>Lot (sq.m)</td><td>90</td></tr>
+        <tr><td>Usable (sq.m)</td><td>118</td></tr>
+        <tr><td>Total Contract Price (TCP)</td><td>P 8,516,375.14</td></tr>
+        <tr><td>Down Payment (10%)</td><td>P 851,637.50</td></tr>
+        <tr><td>Less Reservation</td><td>P 50,000</td></tr>
+        <tr><td>DP Balance</td><td>P 801,637.50</td></tr>
+      </table>
+
+      <h3>DP Terms</h3>
+      <table>
+        <tr><th>Block</th><th>Months to Pay</th><th>Monthly Amortization</th></tr>
+        <tr><td>Block 2</td><td>18</td><td>44,535.42</td></tr>
+        <tr><td>Block 4</td><td>12</td><td>66,803.13</td></tr>
+        <tr><td>Block 3</td><td>6</td><td>133,606.25</td></tr>
+      </table>
+
+      <p><strong>Balance (90%) for Bank Loan:</strong> P 7,664,737.50</p>
+
+      <h3>Bank Loan Terms</h3>
+      <table>
+        <tr><th>Years</th><th>Monthly Amortization</th><th>Required Combined Income</th></tr>
+        <tr><td>25</td><td>53,587.44</td><td>135,000.00</td></tr>
+        <tr><td>20</td><td>58,873.79</td><td>148,000.00</td></tr>
+        <tr><td>15</td><td>68,379.63</td><td>122,000.00</td></tr>
+        <tr><td>10</td><td>88,520.79</td><td>222,000.00</td></tr>
+        <tr><td>5</td><td>151,337.42</td><td>379,000.00</td></tr>
+      </table>
+
+      <h3>In House 20% Downpayment</h3>
+      <table>
+        <tr><th>Years</th><th>Amount</th><th>Percentage</th></tr>
+        <tr><td>5</td><td>166,339.86</td><td>14%</td></tr>
+        <tr><td>10</td><td>121,939.30</td><td>16%</td></tr>
+      </table>
+
+      <button onclick="printTable('end')">Print</button>
+      <button onclick="downloadCSV('end')">Download CSV</button>
+    </div>
+
+    <!-- Corner Unit -->
+    <div class="unit-table" id="corner">
+      <h2>Corner Unit Sample Computation</h2>
+      <p>Effective August 01, 2025</p>
+      <table>
+        <tr><td>Lot (sq.m)</td><td>90</td></tr>
+        <tr><td>Usable (sq.m)</td><td>118</td></tr>
+        <tr><td>Total Contract Price (TCP)</td><td>P 9,076,373.63</td></tr>
+        <tr><td>Down Payment (10%)</td><td>P 907,637.36</td></tr>
+        <tr><td>Less Reservation</td><td>P 50,000</td></tr>
+        <tr><td>DP Balance</td><td>P 857,637.36</td></tr>
+      </table>
+
+      <h3>DP Terms</h3>
+      <table>
+        <tr><th>Block</th><th>Months to Pay</th><th>Monthly Amortization</th></tr>
+        <tr><td>Block 3</td><td>6</td><td>142,939.56</td></tr>
+        <tr><td>Block 12</td><td>12</td><td>71,469.78</td></tr>
+      </table>
+
+      <p><strong>Balance (90%) for Bank Loan:</strong> P 8,168,736.27</p>
+
+      <h3>Bank Loan Terms</h3>
+      <table>
+        <tr><th>Years</th><th>Monthly Amortization</th><th>Required Combined Income</th></tr>
+        <tr><td>25</td><td>57,111.11</td><td>144,000.00</td></tr>
+        <tr><td>20</td><td>62,745.07</td><td>156,000.00</td></tr>
+        <tr><td>15</td><td>72,875.97</td><td>184,000.00</td></tr>
+        <tr><td>10</td><td>94,341.52</td><td>237,000.00</td></tr>
+        <tr><td>5</td><td>161,288.69</td><td>405,000.00</td></tr>
+      </table>
+
+      <h3>In House 20% Downpayment</h3>
+      <table>
+        <tr><th>Years</th><th>Amount</th><th>Percentage</th></tr>
+        <tr><td>5</td><td>177,281.28</td><td>14%</td></tr>
+        <tr><td>10</td><td>129,961.15</td><td>16%</td></tr>
+      </table>
+
+      <button onclick="printTable('corner')">Print</button>
+      <button onclick="downloadCSV('corner')">Download CSV</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright 2025 - 2027 AskMeHow @ Michael Dolor | Email: <a href="mailto:mikejrdolor@gmail.com">mikejrdolor@gmail.com</a></p>
+  </footer>
+
+  <script>
+    // Toggle unit tables
+    document.getElementById("unitSelect").addEventListener("change", function() {
+      let value = this.value;
+      document.querySelectorAll(".unit-table").forEach(div => {
+        div.style.display = (div.id === value) ? "block" : "none";
+      });
+    });
+
+    // Print function
+    function printTable(unitId) {
+      let printContents = document.getElementById(unitId).innerHTML;
+      let newWin = window.open("", "", "width=800,height=600");
+      newWin.document.write("<html><head><title>Print</title></head><body>");
+      newWin.document.write(printContents);
+      newWin.document.write("</body></html>");
+      newWin.document.close();
+      newWin.print();
+    }
+
+    // Download CSV
+    function downloadCSV(unitId) {
+      let rows = document.querySelectorAll("#" + unitId + " table tr");
+      let csv = [];
+      rows.forEach(row => {
+        let cols = row.querySelectorAll("td, th");
+        let rowData = [];
+        cols.forEach(col => rowData.push(col.innerText));
+        csv.push(rowData.join(","));
+      });
+
+      let csvContent = "data:text/csv;charset=utf-8," + csv.join("\n");
+      let link = document.createElement("a");
+      link.setAttribute("href", encodeURI(csvContent));
+      link.setAttribute("download", unitId + "_computation.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
