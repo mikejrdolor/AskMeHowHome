@@ -531,8 +531,86 @@
 
 
 
+
+
+  <!-- Footer -->
+
+
   <!-- Footer -->
   <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-footer">
+          <span class="brand-mark">🏡</span>
+          <span class="brand-text">AskMeHowHomes</span>
+        </div>
+        <p class="muted">Helping buyers and investors make confident moves in townhouses and condominiums.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-list">
+          <li>📞 <a href="tel:+639618439871">+63 961 843 9871</a></li>
+          <li>✉️ <a href="mailto:mikejrdolor@gmail.com">mikejrdolor@gmail.com</a></li>
+          <li>✉️ <a href="https://www.facebook.com/profile.php?id=61551203853576">FaceBook</a></li>
+          <li>📍 Las Pinas </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-list">
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Inquire</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Share Button -->
+    <div style="text-align:center; margin:20px 0;">
+      <button id="shareBtn" class="btn">🔗 Share This Page</button>
+    </div>
+
+    <div class="legal">© <span id="year"></span> AskMeHowHomes • All rights reserved. Created By: Michael Dolor</div>
+  </footer>
+
+  <!-- Minimal JS: mobile menu + year + share -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Share Button
+      const shareBtn = document.getElementById('shareBtn');
+      shareBtn.addEventListener('click', async () => {
+        const shareData = {
+          title: document.title,
+          text: "Check out this great real estate page!",
+          url: window.location.href
+        };
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+          } else {
+            // Fallback: copy link
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied to clipboard!");
+          }
+        } catch (err) {
+          console.log("Share failed:", err.message);
+        }
+      });
+    })();
+  </script>
+
+
+
+<!--  <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <div class="brand brand-footer">
@@ -574,6 +652,11 @@
       });
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
-  </script>
+  </script> -->
+
+
+
+
+
 </body>
 </html>
