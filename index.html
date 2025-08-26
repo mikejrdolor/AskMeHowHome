@@ -31,6 +31,10 @@
     </div>
   </header>
 
+
+
+
+
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="container hero-grid">
@@ -109,6 +113,69 @@
   }, 4000);
 </script>
 
+
+
+<!-- Newsletter Section -->
+<section id="newsletter" style="background:black; padding:40px 20px; text-align:center;">
+  <h2>📩 Subscribe to Our Newsletter</h2>
+  <p>Get the latest property updates, promos, and housing tips straight to your inbox.</p>
+  
+  <form id="newsletterForm" style="max-width:400px; margin:20px auto;">
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      placeholder="Enter your email address" 
+      required 
+      style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px; margin-bottom:10px;"
+    >
+    <button 
+      type="submit" 
+      style="width:100%; padding:12px; background:#007BFF; color:#fff; border:none; border-radius:8px; cursor:pointer;"
+    >
+      Subscribe
+    </button>
+  </form>
+
+  <p id="message" style="color:green; font-weight:bold;"></p>
+</section>
+
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyUcTLxWrjwjIYtCfZIRyB-_89Y7pu_BPFEQf7YsyjR8MJ0Zb6oJpi3X-4ylFfXLmhR/exec"; // Replace with your Google Apps Script Web App URL
+
+  document.getElementById("newsletterForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+
+    try {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      const result = await response.json();
+      if (result.status === "success") {
+        document.getElementById("message").innerText = "✅ Thank you for subscribing!";
+        document.getElementById("newsletterForm").reset();
+      } else {
+        document.getElementById("message").innerText = "⚠️ Something went wrong. Please try again.";
+      }
+    } catch (error) {
+      document.getElementById("message").innerText = "❌ Error saving email.";
+      console.error("Error:", error);
+    }
+
+
+fetch(scriptURL, {
+  method: "POST",
+  body: JSON.stringify({ email }),
+  headers: { "Content-Type": "application/json" }
+});
+
+
+  });
+</script>
 
 
 
