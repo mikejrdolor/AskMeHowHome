@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mortgage Calculator with Amortization Export</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .calculator {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      width: 850px;
+      margin: 20px auto;
+      flex-grow: 1;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0077cc;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: right;
+    }
+
+    th {
+      background: #0077cc;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .table-container {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-top: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .export-buttons {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .export-buttons button {
+      margin: 5px;
+    }
+
+    footer {
+      background: #0077cc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>🏡 Mortgage Calculator</h2>
+    <label>Property Price (₱):</label>
+    <input type="number" id="price" placeholder="e.g. 3000000">
+
+    <label>Down Payment (₱):</label>
+    <input type="number" id="down" placeholder="e.g. 300000">
+
+    <label>Annual Interest Rate (%):</label>
+    <input type="number" id="rate" step="0.01" placeholder="e.g. 6.5">
+
+    <label>Loan Term (Years):</label>
+    <input type="number" id="years" placeholder="e.g. 20">
+
+    <button onclick="calculateMortgage()">Calculate</button>
+
+    <div class="result" id="result">Monthly Payment: ₱0.00</div>
+
+    <div class="table-container">
+      <table id="amortizationTable">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Payment (₱)</th>
+            <th>Principal (₱)</th>
+            <th>Interest (₱)</th>
+            <th>Balance (₱)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="export-buttons">
+      <button onclick="exportToPDF()">📄 Export to PDF</button>
+      <button onclick="exportToExcel()">📊 Export to Excel</button>
+      <button onclick="printTable()">🖨️ Print</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 AskMeHowHome | Contact: mikejrdolor@gmail.com | All Rights Reserved
+  </footer>
+
+  <!-- Libraries for PDF & Excel Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <script>
+    function calculateMortgage() {
+      let price = parseFloat(document.getElementById("price").value) || 0;
+      let down = parseFloat(document.getElementById("down").value) || 0;
+      let rate = parseFloat(document.getElementById("rate").value) || 0;
+      let years = parseInt(document.getElementById("years").value) || 0;
+
+      let loanAmount = price - down;
+      let monthlyRate = rate / 100 / 12;
+      let numberOfPayments = years * 12;
+
+      let monthlyPayment = 0;
+      if (monthlyRate > 0) {
+        monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
+                         (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+      } else {
+        monthlyPayment = loanAmount / numberOfPayments;
+      }
+
+      document.getElementById("result").innerText =
+        `Monthly Payment: ₱${monthlyPayment.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+      // Build Amortization Table
+      let balance = loanAmount;
+      let tableBody = document.querySelector("#amortizationTable tbody");
+      tableBody.innerHTML = "";
+
+      for (let i = 1; i <= numberOfPayments; i++) {
+        let interestPayment = balance * monthlyRate;
+        let principalPayment = monthlyPayment - interestPayment;
+        balance -= principalPayment;
+
+        if (balance < 0) balance = 0;
+
+        let row = `<tr>
+          <td>${i}</td>
+          <td>₱${monthlyPayment.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2})}</td>
+          <td>₱${principalPayment.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2})}</td>
+          <td>₱${interestPayment.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2})}</td>
+          <td>₱${balance.toLocaleString(undefined,{minimumFractionDigits:2, maximumFractionDigits:2})}</td>
+        </tr>`;
+
+        tableBody.innerHTML += row;
+      }
+    }
+
+    // Export to PDF
+    function exportToPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.text("Mortgage Amortization Schedule", 14, 15);
+      doc.autoTable({ html: '#amortizationTable', startY: 20 });
+      doc.save("Amortization-Schedule.pdf");
+    }
+
+    // Export to Excel
+    function exportToExcel() {
+      let table = document.getElementById("amortizationTable");
+      let wb = XLSX.utils.table_to_book(table, { sheet: "Amortization" });
+      XLSX.writeFile(wb, "Amortization-Schedule.xlsx");
+    }
+
+    // Print table
+    function printTable() {
+      let divContents = document.querySelector(".calculator").innerHTML;
+      let a = window.open("", "", "height=700,width=900");
+      a.document.write("<html><head><title>Amortization Schedule</title></head><body>");
+      a.document.write(divContents);
+      a.document.write("</body></html>");
+      a.document.close();
+      a.print();
+    }
+  </script>
+</body>
+</html>
