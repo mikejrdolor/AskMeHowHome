@@ -1,0 +1,290 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f8;
+  color: #333;
+}
+
+header {
+  background: #0066cc;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+
+
+
+.filter {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.filter select {
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.5rem;
+}
+
+.card p {
+  margin: 0.5rem;
+  color: #555;
+}
+
+.price {
+  display: block;
+  margin: 0.5rem;
+  font-weight: bold;
+  color: #0066cc;
+}
+
+/* Footer */
+.site-footer{ border-top:1px solid var(--stroke); background:linear-gradient(180deg, #0a0f18 0%, white 0%); }
+.footer-grid{ display:grid; grid-template-columns: 1.2fr .8fr .8fr; gap:18px; padding:24px 0; }
+.brand-footer{ margin-bottom:8px; }
+.footer-list{ list-style:none; padding:0; margin:0; display:grid; gap:6px; }
+.footer-list a{ color:#c7d6f3; text-decoration:none; }
+.footer-list a:hover{ color:#fff; }
+.muted{ color:var(--muted); }
+.legal{ text-align:center; color:#7f8fb0; font-size:.9rem; padding:14px 0 24px; border-top:1px solid var(--stroke); }
+
+
+/* Floating marquee banner */
+    .marquee-banner {
+      position: fixed;
+      top: 0; /* change to top:0; if you want it at the top */
+      left: 0;
+      width: 100%;
+      background: white;
+      color: #000;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 35s linear infinite;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Optional button inside banner */
+    .marquee-banner a {
+      background: #ff5733;
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      margin-left: 15px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .marquee-banner a:hover {
+      background: #e94e2f;
+    }
+
+
+
+/* Floating bouncing picture banner */
+    .bouncing-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      animation: bounce 2s infinite;
+      text-align: center;
+      background: #fff;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: inline-block;
+      cursor: move; /* Show draggable cursor */
+    }
+
+    .bouncing-banner img {
+      max-width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .bouncing-banner a {
+      display: block;
+      margin-top: 8px;
+      text-decoration: none;
+      background: #ff5733;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .bouncing-banner a:hover {
+      background: #e94e2f;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+    /* Bouncing animation */
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-20px); }
+      60% { transform: translateY(-10px); }
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+
+/* Extra button styles */
+    .btn-link {
+      display: inline-block;
+      padding: 8px 14px;
+      margin: 6px 4px;
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .btn-link:hover {
+      background: #004a99;
+    }
+    .card {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+
+/* Overlay background */
+    .testimonial-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Popup box */
+    .testimonial-popup {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+      position: relative;
+    }
+
+    /* Close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+    /* Testimonial content */
+    .testimonial-slide {
+      display: none;
+    }
+
+    .testimonial-slide.active {
+      display: block;
+    }
+
+    .testimonial-slide img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #0077cc;
+    }
+
+    .testimonial-slide h3 {
+      margin: 5px 0;
+      color: #0077cc;
+    }
+
+    .testimonial-slide p {
+      font-style: italic;
+      color: #444;
+      margin-top: 10px;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+

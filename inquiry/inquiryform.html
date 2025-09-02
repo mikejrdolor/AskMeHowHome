@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inquiry Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .inquiry-form {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .inquiry-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .inquiry-form label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    .inquiry-form input,
+    .inquiry-form select,
+    .inquiry-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .inquiry-form button {
+      margin-top: 20px;
+      width: 100%;
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .inquiry-form button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <form class="inquiry-form" action="https://formspree.io/f/mvgqlywq" method="POST">
+    <h2>📩 Property Inquiry</h2>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+    <label for="property">Interested Property</label>
+    <select id="property" name="property">
+      <option value="Paseo Verde">Paseo Verde, Las Piñas</option>
+      <option value="Acadia Inland">Acadia Inland, Parañaque</option>
+      <option value="Kathleen 5">Kathleen 5, Cavite</option>
+      <option value="NewTown">NewTown, Dasmariñas</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="Type your inquiry here..." required></textarea>
+
+    <button type="submit">📨 Send Inquiry</button>
+  </form>
+</body>
+</html>
