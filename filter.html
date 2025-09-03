@@ -63,6 +63,7 @@
 <!-- Buttons -->
       <a href="PaseoTG/Paseo.html" class="btn-link">📷 Pictures</a>
       <a href="Pricing/paseo/paseo.html" class="btn-link">💰 Pricing</a>
+
     </div>
 
 
@@ -232,6 +233,116 @@
 
 
 
+<!-- Floating banner -->
+  <div class="floating-banner" id="banner">
+     💥 Acadia - (RFO) – 3 Storey Units
+    ✅ Only 10% Down Payment
+    🚨 Spread over 12 months – 0% interest!
+    <!-- <button>Inquire Now</button> -->
+    <button> <a href="inquiry/inquiryform.html">Inquire Now</a> </button> 
+    <button class="close-btn" onclick="closeBanner()">❌</button>
+  </div>
+
+  <script>
+    function closeBanner() {
+      const banner = document.getElementById('banner');
+      banner.style.display = 'none';
+
+      // Reappear after 10 seconds with fade-in effect
+      setTimeout(() => {
+        banner.style.display = 'flex';
+        banner.style.animation = 'fadeIn 1s ease';
+      }, 10000);
+    }
+  </script>
+
+
+
+<!-- Floating Sticky Note -->
+<div class="sticky-note" id="stickyNote">
+  <span class="close-btn" onclick="document.getElementById('stickyNote').style.display='none'">❌</span>
+  <h3>📌 Promo Reminder!</h3>
+  <p>
+    Kathleen 5 Bacoor, Cavite
+    🎁 SEPTEMBER BUYERS FREEBIE:
+Get TWO (2) FREE Window-Type Air Conditioners Upon House Turnover! ❄️❄️
+
+HURRY! Our RFO PROMO is EXTENDED!
+Don’t miss your chance to reserve a Ready-for-Occupancy unit
+✅ Promo extended until September 7, 2025 ONLY!
+ 🏡
+  </p>
+  <a href="inquiry/inquiryform.html" class="note-btn">Inquire Now</a>
+</div>
+
+<style>
+  .sticky-note {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 220px;
+    background: #fff9c4;
+    color: #333;
+    padding: 15px;
+    border: 2px solid #fbc02d;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    z-index: 10000;
+    transform: rotate(-3deg);
+    animation: floaty 3s ease-in-out infinite;
+  }
+
+  .sticky-note h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #e65100;
+  }
+
+  .sticky-note p {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .note-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #ff9800;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .note-btn:hover {
+    background: #e68900;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  @keyframes floaty {
+    0% { transform: rotate(-3deg) translateY(0px); }
+    50% { transform: rotate(-3deg) translateY(-5px); }
+    100% { transform: rotate(-3deg) translateY(0px); }
+  }
+</style>
+
+
+
+
+
+
+
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -266,4 +377,3 @@
   <script src="filter.js"></script>
 </body>
 </html>
-
